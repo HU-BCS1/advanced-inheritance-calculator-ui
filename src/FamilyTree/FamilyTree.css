@@ -1,0 +1,57 @@
+.FamilyTree {
+  display: grid;
+  grid-template-columns: 1fr .5fr;
+  gap: 8px;
+}
+
+.FamilyTree-sidebar {
+  border-left: 1px solid #eee;
+  height: 100vh;
+  padding: 12px 18px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.FamilyTree-sidebar-header {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.FamilyTree-svg-container {
+  padding: 24px;
+  height: 100vh;
+  overflow: auto;
+  text-align: center;
+  border-left: 1px solid;
+  box-sizing: border-box;
+}
+
+.node {
+  fill: #fff;
+  stroke: steelblue;
+}
+
+.node:hover, .node .text:hover {
+  stroke-width: 2;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+
+.sibling-link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+
+.text {
+  font-size: 12px;
+  pointer-events: none;
+  text-transform: capitalize;
+}

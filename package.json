@@ -6,8 +6,15 @@
     "pnp": true
   },
   "dependencies": {
+    "@material/react-button": "^0.11.0",
+    "@material/react-select": "^0.11.0",
+    "@material/react-text-field": "^0.11.0",
+    "d3": "^5.9.2",
+    "d3-textwrap": "^2.0.2",
+    "d3plus-text": "^0.9.43",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-modal": "^3.8.1",
     "react-scripts": "2.1.8"
   },
   "scripts": {

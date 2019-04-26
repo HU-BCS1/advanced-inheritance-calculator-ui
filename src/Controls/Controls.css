@@ -1,0 +1,85 @@
+.Controls-dt {
+  display: block;
+  background: #6200ee;
+  color: #fff;
+  padding: 4px;
+}
+
+.Controls-spouses-list {
+  margin: 0;
+}
+
+.Controls-add-buttons {
+  display: grid;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.modal-title {
+  font-size: 24px;
+  margin: 0 8px;
+}
+
+.modal-form {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.modal-footer {
+  display: flex;
+  place-content: flex-end;
+}
+
+.modal {
+  background: #fff;
+  padding: 32px 16px;
+  margin: 80px 8px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.25), 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1,1,1,0.6);
+  opacity: 0;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  transition: all 0.3s ease;
+  transform: scale(0.1);
+  opacity: 0;
+}
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+@media (min-width: 780px) {
+  .modal {
+    margin: 80px;
+  }
+}
