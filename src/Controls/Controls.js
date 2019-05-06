@@ -1,6 +1,7 @@
 //@ts-check
 import React, { useState } from 'react'
 import Modal from 'react-modal'
+import LinkButton from '../LinkButton'
 
 import Select from '@material/react-select';
 import '@material/react-select/dist/select.css';
@@ -77,13 +78,13 @@ const Controls = ({
 
       </div>
 
-      <div></div>
-      <div>
+      <div className="Controls-footer">
         <Select outlined label="Root" {...selectedRoot.input}>
           {roots.map(root => (
             <option key={root}>{root}</option>
           ))}
         </Select>
+        <LinkButton raised to="/step-2">Next</LinkButton>
       </div>
 
       <Modal

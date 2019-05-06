@@ -3,13 +3,11 @@ import React, { useState, useEffect, useRef, useMemo } from 'react'
 import './FamilyTree.css'
 import drawFamilyTree from './d3-familyTree'
 import Controls from '../Controls/Controls'
-import useFamily from './useFamily'
 import useSelect from '../hooks/useSelect'
 
-const FamilyTree = () => {
+const FamilyTree = ({ family, revision, addSpouse, addChild, addParents }) => {
   const rootElement = useRef(null)
   const [selectedNode, setSelectedNode] = useState(null)
-  const { family, revision, addSpouse, addChild, addParents } = useFamily()
   const roots = useMemo(() => family.findRoots(), [revision])
   const selectedRoot = useSelect(roots)
 

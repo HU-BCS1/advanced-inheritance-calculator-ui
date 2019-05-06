@@ -1,6 +1,6 @@
 //@ts-check
 import { useState, useEffect, useRef } from 'react'
-import Family from './family'
+import Family from '../FamilyTree/family'
 
 const useFamily = () => {
   const f = useRef(new Family())

@@ -15,6 +15,12 @@
   margin-top: 32px;
 }
 
+.Controls-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .modal-title {
   font-size: 24px;
   margin: 0 8px;
