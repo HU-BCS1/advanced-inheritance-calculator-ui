@@ -1,19 +1,18 @@
 //@ts-check
 import React, { useState } from 'react'
 import Modal from 'react-modal'
-import LinkButton from '../LinkButton'
-
-import Select from '@material/react-select';
-import '@material/react-select/dist/select.css';
-
-import TextField, { Input } from '@material/react-text-field';
-import '@material/react-text-field/dist/text-field.css';
-
+import Select, { Option } from '@material/react-select';
 import Button from '@material/react-button';
-import '@material/react-button/dist/button.css';
+import TextField, { Input } from '@material/react-text-field';
 
+import LinkButton from '../LinkButton'
 import useInput from '../hooks/useInput'
+
+import '@material/react-text-field/dist/text-field.css';
+import '@material/react-select/dist/select.css';
+import '@material/react-button/dist/button.css';
 import './Controls.css'
+
 
 Modal.setAppElement('#root')
 
@@ -81,7 +80,7 @@ const Controls = ({
       <div className="Controls-footer">
         <Select outlined label="Root" {...selectedRoot.input}>
           {roots.map(root => (
-            <option key={root}>{root}</option>
+            <Option key={root} value={root}>{root}</Option>
           ))}
         </Select>
         <LinkButton raised to="/step-2">Next</LinkButton>

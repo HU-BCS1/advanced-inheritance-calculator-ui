@@ -5,12 +5,12 @@
 }
 
 .FamilyTree-sidebar {
-  border-left: 1px solid #eee;
   height: 100vh;
   padding: 12px 18px;
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 1fr auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .FamilyTree-sidebar-header {
