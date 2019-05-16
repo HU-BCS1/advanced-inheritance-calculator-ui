@@ -51,7 +51,7 @@ const Controls = ({
         <p className="FamilyTree-sidebar-header">{selected}</p>
         <p><span className="Controls-dt">Father</span> {family.getFather(selected) || 'N/A'}</p>
         <p><span className="Controls-dt">Mother</span> {family.getMother(selected) || 'N/A'}</p>
-        <p>
+        <div>
           <span className="Controls-dt">Families</span>
           {family.getSpouses(selected).length === 0 && 'N/A'}
           <ul className="Controls-spouses-list">
@@ -66,7 +66,7 @@ const Controls = ({
               </li>
             ))}
           </ul>
-        </p>
+        </div>
 
         <div className="Controls-add-buttons">
           <Button outlined onClick={() => setSpouseModal(true)}>Add Spouse</Button>

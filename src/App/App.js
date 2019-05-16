@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import './App.css';
 import FamilyTreeConstructor from '../FamilyTree'
+import DeceasedSelector from '../DeceasedSelector/DeceasedSelector'
 import useFamily from '../hooks/useFamily'
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
             />
           )}
         />
-        <Route path="/step-2" render={() => <Temp family={family}/>} />
+        <Route path="/step-2" render={() => <DeceasedSelector family={family}/>} />
         <Route path="/step-3" render={() => <div>step3</div>} />
       </div>
     </Router>
@@ -32,11 +33,3 @@ const App = () => {
 }
 
 export default App;
-
-const Temp = ({ family }) => {
-  return (
-    <ul>
-      {family.getMemebers().map(m => <li key={m}>{m}</li>)}
-    </ul>
-  )
-}

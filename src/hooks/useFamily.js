@@ -1,15 +1,20 @@
 //@ts-check
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Family from '../FamilyTree/family'
 
 const useFamily = () => {
-  const f = useRef(new Family())
+  const f = useRef((() => {
+    const family = new Family()
+    family.addMember('sh omar')
+    family.addMember('barni')
+    family.addMember('ali')
+    family.addMember('halima', 'female')
+    family.addMember('hassan')
+    family.addSpouse('sh omar', 'barni')
+    family.addChildren('sh omar', 'barni', ['ali', 'halima', 'hassan'])
+    return family
+  })())
   const [revision, setRevision] = useState(0)
-
-  useEffect(() => {
-    f.current.addMember('sh omar')
-    setRevision(current => current + 1)
-  }, [])
 
   const family = f.current
   return {

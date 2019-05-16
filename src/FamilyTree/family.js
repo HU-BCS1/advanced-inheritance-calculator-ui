@@ -17,11 +17,11 @@ export default class Family {
 
   getGender = person => this.f.vertexLabels[person].gender
 
-  getMemebers = () =>
+  getMembers = () =>
     Object.keys(this.f.adjList)
 
   findRoots = () =>
-    this.getMemebers().filter(person => this.isRoot(person))
+    this.getMembers().filter(person => this.isRoot(person))
 
   isRoot = person =>
     this.getParents(person).length === 0
