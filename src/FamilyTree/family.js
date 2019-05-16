@@ -46,6 +46,7 @@ export default class Family {
   }
 
   filterByRelation = relation => person => person.relation === relation
+  filterByGender = gender => person => this.getGender(person) === gender
 
   getParents = person =>
     this.getDirectRelatives(person)
@@ -54,12 +55,12 @@ export default class Family {
 
   getFather = person => {
     const parents = this.getParents(person)
-    return parents.find(parent => this.getGender(parent) === 'male')
+    return parents.find(this.filterByGender('male'))
   }
 
   getMother = person => {
     const parents = this.getParents(person)
-    return parents.find(parent => this.getGender(parent) === 'female')
+    return parents.find(this.filterByGender('female'))
   }
 
   getChildren = (person1, person2) => {
@@ -70,6 +71,43 @@ export default class Family {
     return this.getDirectRelatives(person1)
       .filter(this.filterByRelation('child'))
       .map(pick('name'))
+  }
+
+  getSons = (person1, person2) => {
+    return this.getChildren(person1, person2)
+      .filter(this.filterByGender('male'))
+  }
+
+  getDaughters = (person1, person2) => {
+    return this.getChildren(person1, person2)
+      .filter(this.filterByGender('female'))
+  }
+
+  getSiblings = (person, { sameFather = true, sameMother = true } = {}) => {
+    const father = this.getFather(person)
+    const mother = this.getMother(person)
+    if(sameFather && sameMother) {
+      return this.getChildren(father, mother).filter(p => p !== person)
+    }
+    else if(sameFather) {
+      return this.getChildren(father).filter(p => p !== person)
+    }
+    else if(sameMother) {
+      return this.getChildren(mother).filter(p => p !== person)
+    }
+    else {
+      return []
+    }
+  }
+
+  getBrothers = (person, { sameFather = true, sameMother = true } = {}) => {
+    return this.getSiblings(person, { sameFather, sameMother })
+      .filter(p => this.getGender(p) === 'male')
+  }
+
+  getSisters = (person, { sameFather = true, sameMother = true } = {}) => {
+    return this.getSiblings(person, { sameFather, sameMother })
+      .filter(p => this.getGender(p) === 'female')
   }
 
   getSpouses = person =>
@@ -109,6 +147,7 @@ const pick = key => obj => obj[key]
 
 const intersection = (array1, array2) =>
   array1.filter(value => array2.includes(value))
+
 
 /*
 

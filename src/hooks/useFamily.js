@@ -6,7 +6,7 @@ const useFamily = () => {
   const f = useRef((() => {
     const family = new Family()
     family.addMember('sh omar')
-    family.addMember('barni')
+    family.addMember('barni', 'female')
     family.addMember('ali')
     family.addMember('halima', 'female')
     family.addMember('hassan')
