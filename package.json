@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "installConfig": {
-    "pnp": true
+    "pnp": false
   },
   "dependencies": {
     "@material/react-button": "^0.11.0",
