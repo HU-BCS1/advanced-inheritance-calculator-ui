@@ -1,3 +1,3 @@
 # Advanced Islamic Inheritance Calculator
 
-this a work in progress website for calculating al-munasakhat (المناسخات في الميراث)
+This a work in progress website for calculating al-munasakhat (المناسخات في الميراث)
