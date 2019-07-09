@@ -86,14 +86,22 @@ export default class Family {
   getSiblings = (person, { sameFather = true, sameMother = true } = {}) => {
     const father = this.getFather(person)
     const mother = this.getMother(person)
+    if(!father && !mother) return []
+
     if(sameFather && sameMother) {
       return this.getChildren(father, mother).filter(p => p !== person)
     }
     else if(sameFather) {
-      return this.getChildren(father).filter(p => p !== person)
+      return difference(
+        this.getChildren(father).filter(p => p !== person),
+        this.getChildren(mother)
+      )
     }
     else if(sameMother) {
-      return this.getChildren(mother).filter(p => p !== person)
+      return difference(
+        this.getChildren(mother).filter(p => p !== person),
+        this.getChildren(father)
+      )
     }
     else {
       return []
@@ -147,6 +155,8 @@ const pick = key => obj => obj[key]
 
 const intersection = (array1, array2) =>
   array1.filter(value => array2.includes(value))
+
+const difference = (array1, array2) => array1.filter(x => !array2.includes(x))
 
 
 /*

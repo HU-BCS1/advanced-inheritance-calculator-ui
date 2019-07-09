@@ -68,11 +68,11 @@ const Controls = ({
         </div>
 
         <div className="Controls-add-buttons">
-          <Button outlined onClick={() => setSpouseModal(true)}>Add Spouse</Button>
+          <Button outlined dense onClick={() => setSpouseModal(true)}>Add Spouse</Button>
           {family.getSpouses(selected).length > 0 && (
-            <Button outlined onClick={() => setChildModal(true)}>Add Child</Button>
+            <Button outlined dense onClick={() => setChildModal(true)}>Add Child</Button>
           )}
-          <Button outlined onClick={() => setParentsModal(true)}>Add Parents</Button>
+          <Button outlined dense onClick={() => setParentsModal(true)}>Add Parents</Button>
         </div>
 
       </div>

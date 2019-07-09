@@ -9,15 +9,13 @@ import Button from '@material/react-button'
 import MaterialIcon from '@material/react-material-icon'
 
 import LinkButton from '../LinkButton'
-import useDeceasedSelector from './useDeceasedSelector'
 
 import '@material/react-material-icon/dist/material-icon.css'
 import '@material/react-button/dist/button.css';
 import './DeceasedSelector.css'
 
 
-const DeceasedSelector = ({ family }) => {
-  const [state, dispatch] = useDeceasedSelector(family.getMembers())
+const DeceasedSelector = ({ state, dispatch, family }) => {
   const { deceased, alive, ignored } = state
 
   return (
